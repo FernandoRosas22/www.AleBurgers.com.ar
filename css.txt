@@ -3,7 +3,7 @@
   height: 140px;
   margin: 0 auto;
 
-  background-image: url('logo.png');
+  background-image: url('logo.png.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
