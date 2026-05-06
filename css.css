@@ -150,8 +150,7 @@ html, body {
   display: none;
 }
 
-@media (max-width: 480px) {
-  section { padding: 60px 4% !important; }
-  .section-title { font-size: 38px !important; }
-  .stats { grid-template-columns: 1fr 1fr !important; }
+.hero-logo-wrap {
+  visibility: hidden;
+  height: 0;
 }
