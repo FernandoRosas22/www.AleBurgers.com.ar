@@ -158,36 +158,5 @@ html, body {
 .hero-logo {
   display: none; 
 }
-/* ===== FIX CENTRADO MOBILE ===== */
 
-#nosotros {
-  padding: 80px 16px;
-  display: flex;
-  justify-content: center;
-}
-
-.nosotros-container {
-  max-width: 700px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  #nosotros {
-    padding: 60px 12px;
-  }
-
-  .nosotros-container {
-    padding: 0 8px;
-  }
-
-  .section-title {
-    font-size: 32px;
-  }
-
-  .nosotros-text {
-    text-align: center;
-  }
 }
