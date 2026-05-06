@@ -443,23 +443,40 @@
   <div class="videos-grid">
 
     <div class="video-card">
-      <video src="Hamburguesa_4.mp4" loop playsinline></video>
+      <video src="Hamburguesa_4.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <div class="video-card">
-      <video src="Hamburguesa_2.mp4" loop playsinline></video>
+      <video src="Hamburguesa_2.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <div class="video-card">
-      <video src="Hamburguesa_3.mp4" loop playsinline></video>
+      <video src="Hamburguesa_3.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <div class="video-card">
-      <video src="Hamburguesa_1.mp4" loop playsinline></video>
+      <video src="Hamburguesa_1.mp4" autoplay muted loop playsinline></video>
     </div>
 
   </div>
 </section>
+
+<script>
+document.querySelectorAll(".video-card video").forEach(video => {
+  video.addEventListener("click", () => {
+
+    document.querySelectorAll(".video-card video").forEach(v => {
+      if (v !== video) {
+        v.muted = true;
+      }
+    });
+
+    video.muted = false;
+    video.play();
+
+  });
+});
+</script>
 <p class="video-reel-note" style="margin-top:28px">
   ¿Querés ver más? Seguinos en
   <a href="https://www.instagram.com/aleburgers.ok" target="_blank">@aleburgers.ok</a>
