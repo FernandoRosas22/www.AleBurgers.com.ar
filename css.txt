@@ -32,9 +32,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  align-items: start;
 }
 
 .video-card-ig {
@@ -54,14 +53,27 @@
 }
 
 .video-card-ig video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
+}
+
+.video-reel-note {
+  text-align: center;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.4);
+  font-size: 14px;
+}
+
+.video-reel-note a {
+  color: var(--naranja);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.video-reel-note a:hover {
+  text-decoration: underline;
 }
 
 /* Tablet — 2 columnas */
@@ -69,17 +81,7 @@
   .videos-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    max-width: 500px;
-  }
-}
-
-/* Mobile — 2 columnas más chicas */
-@media (max-width: 480px) {
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    max-width: 100%;
-    padding: 0 8px;
+    max-width: 600px;
   }
 }
 
@@ -93,18 +95,6 @@
     aspect-ratio: 9 / 14;
   }
 }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .videos-grid {
-    grid-template-columns: 1fr !important;
-    max-width: 400px;
-  }
-  .video-card-ig {
-    aspect-ratio: 9 / 14;
-  }
-}
-
 /* ======= ARREGLOS MOBILE GENERALES ======= */
 @media (max-width: 900px) {
   #nosotros { grid-template-columns: 1fr; gap: 50px; }
