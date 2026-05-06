@@ -440,49 +440,26 @@
  <link rel="stylesheet" href="css.css">
 
 <section id="videos">
-  <div class="videos-slider">
+  <div class="videos-grid">
 
-    <div class="video-card" onclick="toggleVideo(this)">
-      <video src="Hamburguesa_1.mp4" muted loop playsinline></video>
+    <div class="video-card">
+      <video src="Hamburguesa_1.mp4" autoplay muted loop playsinline></video>
     </div>
 
-    <div class="video-card" onclick="toggleVideo(this)">
-      <video src="Hamburguesa_2.mp4" muted loop playsinline></video>
+    <div class="video-card">
+      <video src="Hamburguesa_2.mp4" autoplay muted loop playsinline></video>
     </div>
 
-    <div class="video-card" onclick="toggleVideo(this)">
-      <video src="Hamburguesa_3.mp4" muted loop playsinline></video>
+    <div class="video-card">
+      <video src="Hamburguesa_3.mp4" autoplay muted loop playsinline></video>
     </div>
 
-    <div class="video-card" onclick="toggleVideo(this)">
-      <video src="Hamburguesa_4.mp4" muted loop playsinline></video>
+    <div class="video-card">
+      <video src="Hamburguesa_4.mp4" autoplay muted loop playsinline></video>
     </div>
 
   </div>
-</section>
 
-<script>
-function toggleVideo(card) {
-  const videos = document.querySelectorAll(".video-card video");
-
-  videos.forEach(v => {
-    if (v !== card.querySelector("video")) {
-      v.pause();
-      v.muted = true;
-    }
-  });
-
-  const video = card.querySelector("video");
-
-  if (video.paused) {
-    video.muted = false;
-    video.play();
-  } else {
-    video.muted = true;
-    video.pause();
-  }
-}
-</script>
 <p class="video-reel-note" style="margin-top:28px">
   ¿Querés ver más? Seguinos en
   <a href="https://www.instagram.com/aleburgers.ok" target="_blank">@aleburgers.ok</a>
