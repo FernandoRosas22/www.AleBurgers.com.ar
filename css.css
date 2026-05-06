@@ -146,6 +146,9 @@ html, body {
     padding: 40px 5% 100px !important;
   }
 }
+.hero-logo-wrap {
+  display: none;
+}
 
 @media (max-width: 480px) {
   section { padding: 60px 4% !important; }
