@@ -152,11 +152,6 @@ html, body {
 
 /* Tablet — 2 columnas */
 @media (max-width: 900px) {
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 500px;
-  }
   .nosotros-container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -169,6 +164,14 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
 /* Mobile */
 @media (max-width: 768px) {
   body { cursor: auto !important; }
