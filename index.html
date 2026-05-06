@@ -460,33 +460,6 @@
 
   </div>
 </section>
-
-<script>
-  const videos = document.querySelectorAll("video");
-
-  videos.forEach(video => {
-    video.addEventListener("click", () => {
-
-      // Pausar todos los demás
-      videos.forEach(v => {
-        if (v !== video) {
-          v.pause();
-          v.currentTime = 0;
-          v.muted = true;
-        }
-      });
-
-      // Activar este
-      if (video.paused) {
-        video.muted = false;
-        video.play();
-      } else {
-        video.pause();
-      }
-
-    });
-  });
-</script>
 <p class="video-reel-note" style="margin-top:28px">
   ¿Querés ver más? Seguinos en
   <a href="https://www.instagram.com/aleburgers.ok" target="_blank">@aleburgers.ok</a>
@@ -758,6 +731,34 @@
     const msg = encodeURIComponent(`Hola AleBurgers! Soy ${nombre}.\n\n${mensaje}\n\nContacto: ${contacto}`);
     window.open(`https://wa.me/${WSP_NUM}?text=${msg}`, '_blank');
   }
+</script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const videos = document.querySelectorAll(".video-card video");
+
+  videos.forEach(video => {
+    video.addEventListener("click", () => {
+
+      // Pausar los demás
+      videos.forEach(v => {
+        if (v !== video) {
+          v.pause();
+          v.currentTime = 0;
+          v.muted = true;
+        }
+      });
+
+      // Reproducir este
+      if (video.paused) {
+        video.muted = false;
+        video.play();
+      } else {
+        video.pause();
+      }
+
+    });
+  });
+});
 </script>
 </body>
 </html>
