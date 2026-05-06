@@ -1,257 +1,157 @@
-/* ======= HERO LOGO ======= */
-.hero-logo-wrap {
+.hero-logo {
   width: 140px;
   height: 140px;
-  margin: 0 auto 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--naranja);
+  margin: 20px auto;
+
+  display: block;          
+  position: relative;         
+
+  background-image: url('/www.AleBurgers.com.ar/logo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-color: white;
   border-radius: 50%;
-  box-shadow: 0 0 60px rgba(255,107,0,0.5);
-  animation: pulse 3s ease-in-out infinite;
+  z-index: 10;               
 }
-
-.hero-logo {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-  border-radius: 50%;
-  display: block;
-}
-
-/* ======= NOSOTROS ======= */
-#nosotros {
-  background: var(--gris-oscuro);
-  padding: 100px 5%;
-}
-
-.nosotros-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nosotros-text p {
-  color: rgba(255,255,255,0.7);
-  font-size: 17px;
-  line-height: 1.8;
-  margin-top: 24px;
-}
-
-.nosotros-img-wrap {
-  position: relative;
-}
-
-.nosotros-img-placeholder {
-  width: 100%;
-  aspect-ratio: 4/5;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 2px solid rgba(255,107,0,0.25);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-
-.nosotros-img-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.nosotros-img-placeholder img:hover {
-  transform: scale(1.04);
-}
-
-.badge-float {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: var(--naranja);
-  color: #fff;
-  border-radius: 50%;
-  width: 110px;
-  height: 110px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px;
-  letter-spacing: 1px;
-  text-align: center;
-  line-height: 1.1;
-  box-shadow: 0 8px 30px rgba(255,107,0,0.5);
-}
-
 /* ======= VIDEOS ======= */
 #videos {
   background: var(--gris-oscuro);
-  padding: 100px 5%;
 }
 
 .videos-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .videos-header p {
   color: rgba(255,255,255,0.5);
-  margin-top: 16px;
-  font-size: 17px;
+  margin-top: 10px;
+  font-size: 16px;
 }
 
+/* CONTENEDOR SCROLL HORIZONTAL */
 .videos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
 }
 
-.video-card-ig {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  border-radius: 18px;
+/* ocultar scrollbar */
+.videos-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* TARJETAS */
+.video-card {
+  flex: 0 0 220px; /* tamaño fijo */
+  aspect-ratio: 9/16;
+  border-radius: 16px;
   overflow: hidden;
   background: #000;
-  border: 1px solid rgba(255,107,0,0.2);
-  transition: transform 0.3s, border-color 0.3s;
+  scroll-snap-align: start;
+  position: relative;
 }
 
-.video-card-ig:hover {
-  transform: scale(1.02);
-  border-color: rgba(255,107,0,0.5);
-}
-
-.video-card-ig video {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* VIDEO */
+.video-card video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
 }
 
-.video-reel-note {
-  text-align: center;
-  margin-top: 32px;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
+/* HOVER */
+.video-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
 }
 
-.video-reel-note a {
-  color: var(--naranja);
-  text-decoration: none;
-  font-weight: 700;
+/* ======= MOBILE ======= */
+@media (max-width: 768px) {
+  .video-card {
+    flex: 0 0 180px;
+  }
 }
 
-.video-reel-note a:hover {
-  text-decoration: underline;
+@media (max-width: 480px) {
+  .video-card {
+    flex: 0 0 160px;
+  }
 }
 
+/* Tablet */
+@media (max-width: 900px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* ======= FIXES GENERALES ======= */
+
 html, body {
   overflow-x: hidden;
   max-width: 100%;
 }
 
-/* ======= RESPONSIVE ======= */
-
-@media (max-width: 900px) {
-  .nosotros-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .nosotros-img-wrap {
-    display: none;
-  }
-  .contacto-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
-
+/* Mobile fixes */
 @media (max-width: 768px) {
   body { cursor: auto !important; }
   .cursor, .cursor-ring { display: none !important; }
+
   section { padding: 60px 5%; }
-  .hero-logo-wrap { width: 100px; height: 100px; }
-  .hero-logo { width: 80px; height: 80px; }
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 500px;
-  }
+
+  .hero-logo { width: 100px; height: 100px; }
+
   .menu-grid { grid-template-columns: 1fr; }
+
   .stats { grid-template-columns: repeat(3, 1fr); }
+
   .pedidos-card {
     padding: 24px 16px !important;
     width: 100%;
-    box-sizing: border-box;
   }
+
   .btn-wsp {
     font-size: 14px !important;
     padding: 14px 18px !important;
     width: 100%;
     justify-content: center;
-    box-sizing: border-box;
   }
-  .horario-chips {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+
   .redes-btns {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
   }
-  .red-btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
+
+  .contacto-grid {
+    grid-template-columns: 1fr !important;
   }
+
   .modal {
     padding: 28px 20px !important;
     width: calc(100% - 20px) !important;
-    box-sizing: border-box;
   }
+
   footer {
     padding: 40px 5% 100px !important;
   }
-  .wsp-float {
-    bottom: 20px !important;
-    right: 16px !important;
-    width: 52px !important;
-    height: 52px !important;
-  }
+}
+.hero-logo-wrap {
+  display: none;
 }
 
 @media (max-width: 480px) {
-  .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    max-width: 100%;
-    padding: 0 8px;
-  }
-  .stats {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px;
-  }
-  .hero-btns {
-    flex-direction: column;
-    align-items: center;
-  }
-  .section-title {
-    font-size: 38px !important;
-  }
+  section { padding: 60px 4% !important; }
+  .section-title { font-size: 38px !important; }
+  .stats { grid-template-columns: 1fr 1fr !important; }
 }
