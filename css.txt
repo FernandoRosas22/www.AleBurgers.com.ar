@@ -12,3 +12,71 @@
   border-radius: 50%;
   padding: 15px;
 }
+/* ======= VIDEOS ======= */
+#videos { background: var(--gris-oscuro); }
+
+.videos-header { text-align: center; margin-bottom: 60px; }
+.videos-header p { color: rgba(255,255,255,0.5); margin-top: 16px; font-size: 17px; }
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-card-ig {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,107,0,0.2);
+  background: #fff;
+  min-height: 500px;
+}
+
+.video-card-ig .instagram-media {
+  width: 100% !important;
+  min-width: unset !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-radius: 18px !important;
+}
+
+/* ======= ARREGLOS MOBILE GENERALES ======= */
+@media (max-width: 900px) {
+  #nosotros { grid-template-columns: 1fr; gap: 50px; }
+  .nosotros-img { display: none; }
+  .contacto-grid { grid-template-columns: 1fr; }
+  .videos-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 60px 5%; }
+
+  .hero-logo-wrap { width: 100px; height: 100px; }
+  .hero-logo { width: 100px; height: 100px; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .ig-feed { grid-template-columns: repeat(3, 1fr); }
+
+  .pedidos-card { padding: 28px 20px; }
+
+  .redes-btns { flex-direction: column; align-items: center; }
+
+  .btn-wsp { font-size: 15px; padding: 14px 24px; }
+
+  .footer-links { gap: 14px; }
+
+  .wsp-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
+}
+
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; align-items: center; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .horario-chips { flex-direction: column; align-items: center; }
+  .menu-card-btn { width: 100%; justify-content: center; }
+}
