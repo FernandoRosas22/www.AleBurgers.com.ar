@@ -80,3 +80,142 @@
   .horario-chips { flex-direction: column; align-items: center; }
   .menu-card-btn { width: 100%; justify-content: center; }
 }
+/* =====================
+   FIXES MOBILE CRÍTICOS
+   ===================== */
+
+/* Fix cursor — en mobile no debe ocultarse */
+@media (max-width: 768px) {
+  body { cursor: auto !important; }
+  .cursor, .cursor-ring { display: none !important; }
+}
+
+/* Fix overflow horizontal general */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Fix sección videos en mobile */
+@media (max-width: 900px) {
+  .videos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    padding: 0 10px;
+  }
+  .video-card-ig {
+    min-height: unset !important;
+    width: 100%;
+  }
+  .video-card-ig .instagram-media {
+    width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
+/* Fix pedidos card en mobile */
+@media (max-width: 768px) {
+  .pedidos-card {
+    padding: 24px 16px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .btn-wsp {
+    font-size: 14px !important;
+    padding: 14px 18px !important;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .horario-chips {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .chip {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Fix galería en mobile */
+@media (max-width: 768px) {
+  .gal-item {
+    width: 180px !important;
+    height: 180px !important;
+  }
+}
+
+/* Fix redes en mobile */
+@media (max-width: 768px) {
+  .redes-btns {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 12px;
+  }
+  .red-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  .ig-feed {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px;
+  }
+}
+
+/* Fix contacto en mobile */
+@media (max-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+  }
+  .btn-submit {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Fix modal en mobile */
+@media (max-width: 768px) {
+  .modal {
+    padding: 28px 20px !important;
+    margin: 10px;
+    width: calc(100% - 20px) !important;
+    max-width: unset;
+    box-sizing: border-box;
+  }
+  .modal-overlay {
+    padding: 10px !important;
+    align-items: flex-end;
+  }
+}
+
+/* Fix footer en mobile */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 5% 100px !important;
+  }
+  .footer-links {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wsp-float {
+    bottom: 20px !important;
+    right: 16px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+}
+
+/* Fix secciones generales en mobile */
+@media (max-width: 480px) {
+  section { padding: 60px 4% !important; }
+  .section-title { font-size: 38px !important; }
+  .menu-grid { grid-template-columns: 1fr !important; }
+  .stats { grid-template-columns: 1fr 1fr !important; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-sub { font-size: 16px; }
+}
