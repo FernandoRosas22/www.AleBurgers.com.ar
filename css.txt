@@ -12,12 +12,27 @@
   border-radius: 50%;
   padding: 15px;
 }
-/* VIDEOS */
+/* ======= VIDEOS ======= */
+#videos {
+  background: var(--gris-oscuro);
+}
+
+.videos-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.videos-header p {
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+  font-size: 17px;
+}
+
 .videos-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -29,16 +44,56 @@
   overflow: hidden;
   background: #000;
   border: 1px solid rgba(255,107,0,0.2);
+  transition: transform 0.3s, border-color 0.3s;
 }
 
-.video-card-ig iframe {
-  position: absolute;
-  top: -60px;        /* oculta el header con el perfil */
-  left: 0;
+.video-card-ig:hover {
+  transform: scale(1.02);
+  border-color: rgba(255,107,0,0.5);
+}
+
+.video-card-ig video {
   width: 100%;
-  height: calc(100% + 120px); /* compensa el top negativo y oculta el footer */
-  border: none;
-  background: #000;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-reel-note {
+  text-align: center;
+  margin-top: 32px;
+  color: rgba(255,255,255,0.4);
+  font-size: 14px;
+}
+
+.video-reel-note a {
+  color: var(--naranja);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.video-reel-note a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet — 2 columnas */
+@media (max-width: 900px) {
+  .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 600px;
+  }
+}
+
+/* Mobile — 1 columna */
+@media (max-width: 480px) {
+  .videos-grid {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+  }
+  .video-card-ig {
+    aspect-ratio: 9 / 14;
+  }
 }
 
 /* Mobile */
