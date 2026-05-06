@@ -1,18 +1,16 @@
 /* LOGO HERO */
-.hero-logo-wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .hero-logo {
   width: 140px;
   height: 140px;
-  object-fit: contain;
+  margin: 0 auto;
+
+  background-image: url('./logo.jpg'); /* ESTE ES EL PUNTO CLAVE */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
   background-color: white;
   border-radius: 50%;
-  padding: 15px;
 }
 /* ======= VIDEOS ======= */
 #videos {
