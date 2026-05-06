@@ -1,16 +1,19 @@
-/* LOGO HERO */
 .hero-logo {
   width: 140px;
   height: 140px;
-  margin: 0 auto;
+  margin: 20px auto;
 
-  background-image: url('./logo.jpg'); /* ESTE ES EL PUNTO CLAVE */
+  display: block;          
+  position: relative;         
+
+  background-image: url('/www.AleBurgers.com.ar/logo.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 
   background-color: white;
   border-radius: 50%;
+  z-index: 10;               
 }
 /* ======= VIDEOS ======= */
 #videos {
