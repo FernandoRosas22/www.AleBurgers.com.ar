@@ -2,16 +2,15 @@
   width: 140px;
   height: 140px;
   margin: 0 auto;
-
   background-image: url('logo.png.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
   background-color: white;
   border-radius: 50%;
   padding: 15px;
 }
+
 /* ======= VIDEOS ======= */
 #videos {
   background: var(--gris-oscuro);
@@ -34,9 +33,9 @@
   gap: 16px;
   max-width: 900px;
   margin: 0 auto;
-  align-items: start;
 }
 
+/* 🔥 FIX PRINCIPAL (todos iguales SI O SI) */
 .video-card-ig {
   position: relative;
   width: 100%;
@@ -45,23 +44,23 @@
   overflow: hidden;
   background: #000;
   border: 1px solid rgba(255,107,0,0.2);
-  transition: transform 0.3s, border-color 0.3s;
 }
 
+/* 🔥 FORZAR INSTAGRAM A NO ROMPER DISEÑO */
+.video-card-ig iframe,
+.video-card-ig blockquote,
+.video-card-ig .instagram-media {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Hover */
 .video-card-ig:hover {
   transform: scale(1.02);
   border-color: rgba(255,107,0,0.5);
-}
-
-.video-card-ig video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
 .video-reel-note {
@@ -81,202 +80,77 @@
   text-decoration: underline;
 }
 
-/* Tablet — 2 columnas */
+/* ======= RESPONSIVE ======= */
+
+/* Tablet */
 @media (max-width: 900px) {
   .videos-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
     max-width: 500px;
   }
 }
 
-/* Mobile — 1 columnas más chicas */
+/* Mobile */
 @media (max-width: 480px) {
   .videos-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    max-width: 100%;
+    grid-template-columns: 1fr;
     padding: 0 8px;
   }
 }
-  .video-card-ig {
-    aspect-ratio: 9 / 14;
-  }
-}
-/* ======= ARREGLOS MOBILE GENERALES ======= */
-@media (max-width: 900px) {
-  #nosotros { grid-template-columns: 1fr; gap: 50px; }
-  .nosotros-img { display: none; }
-  .contacto-grid { grid-template-columns: 1fr; }
-  .videos-grid { grid-template-columns: 1fr; }
-}
 
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 60px 5%; }
+/* ======= FIXES GENERALES ======= */
 
-  .hero-logo-wrap { width: 100px; height: 100px; }
-  .hero-logo { width: 100px; height: 100px; }
-
-  .menu-grid { grid-template-columns: 1fr; }
-
-  .stats { grid-template-columns: repeat(3, 1fr); }
-  .ig-feed { grid-template-columns: repeat(3, 1fr); }
-
-  .pedidos-card { padding: 28px 20px; }
-
-  .redes-btns { flex-direction: column; align-items: center; }
-
-  .btn-wsp { font-size: 15px; padding: 14px 24px; }
-
-  .footer-links { gap: 14px; }
-
-  .wsp-float { bottom: 20px; right: 20px; width: 52px; height: 52px; }
-}
-
-@media (max-width: 480px) {
-  .hero-btns { flex-direction: column; align-items: center; }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .horario-chips { flex-direction: column; align-items: center; }
-  .menu-card-btn { width: 100%; justify-content: center; }
-}
-/* =====================
-   FIXES MOBILE CRÍTICOS
-   ===================== */
-
-/* Fix cursor — en mobile no debe ocultarse */
-@media (max-width: 768px) {
-  body { cursor: auto !important; }
-  .cursor, .cursor-ring { display: none !important; }
-}
-
-/* Fix overflow horizontal general */
 html, body {
   overflow-x: hidden;
   max-width: 100%;
 }
 
-/* Fix sección videos en mobile */
-@media (max-width: 900px) {
-  .videos-grid {
-    grid-template-columns: 1fr !important;
-    gap: 16px;
-    padding: 0 10px;
-  }
-  .video-card-ig {
-    min-height: unset !important;
-    width: 100%;
-  }
-  .video-card-ig .instagram-media {
-    width: 100% !important;
-    min-width: unset !important;
-  }
-}
-
-/* Fix pedidos card en mobile */
+/* Mobile fixes */
 @media (max-width: 768px) {
+  body { cursor: auto !important; }
+  .cursor, .cursor-ring { display: none !important; }
+
+  section { padding: 60px 5%; }
+
+  .hero-logo { width: 100px; height: 100px; }
+
+  .menu-grid { grid-template-columns: 1fr; }
+
+  .stats { grid-template-columns: repeat(3, 1fr); }
+
   .pedidos-card {
     padding: 24px 16px !important;
     width: 100%;
-    box-sizing: border-box;
   }
+
   .btn-wsp {
     font-size: 14px !important;
     padding: 14px 18px !important;
     width: 100%;
     justify-content: center;
-    box-sizing: border-box;
   }
-  .horario-chips {
+
+  .redes-btns {
     flex-direction: column;
     align-items: center;
-    gap: 8px;
   }
-  .chip {
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
 
-/* Fix galería en mobile */
-@media (max-width: 768px) {
-  .gal-item {
-    width: 180px !important;
-    height: 180px !important;
-  }
-}
-
-/* Fix redes en mobile */
-@media (max-width: 768px) {
-  .redes-btns {
-    flex-direction: column !important;
-    align-items: center;
-    gap: 12px;
-  }
-  .red-btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-  .ig-feed {
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 6px;
-  }
-}
-
-/* Fix contacto en mobile */
-@media (max-width: 768px) {
   .contacto-grid {
     grid-template-columns: 1fr !important;
-    gap: 40px;
   }
-  .btn-submit {
-    width: 100%;
-    text-align: center;
-  }
-}
 
-/* Fix modal en mobile */
-@media (max-width: 768px) {
   .modal {
     padding: 28px 20px !important;
-    margin: 10px;
     width: calc(100% - 20px) !important;
-    max-width: unset;
-    box-sizing: border-box;
   }
-  .modal-overlay {
-    padding: 10px !important;
-    align-items: flex-end;
-  }
-}
 
-/* Fix footer en mobile */
-@media (max-width: 768px) {
   footer {
     padding: 40px 5% 100px !important;
   }
-  .footer-links {
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .wsp-float {
-    bottom: 20px !important;
-    right: 16px !important;
-    width: 52px !important;
-    height: 52px !important;
-  }
 }
 
-/* Fix secciones generales en mobile */
 @media (max-width: 480px) {
   section { padding: 60px 4% !important; }
   .section-title { font-size: 38px !important; }
-  .menu-grid { grid-template-columns: 1fr !important; }
   .stats { grid-template-columns: 1fr 1fr !important; }
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-sub { font-size: 16px; }
 }
