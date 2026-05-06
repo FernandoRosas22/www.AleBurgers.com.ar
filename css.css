@@ -147,10 +147,14 @@ html, body {
   }
 }
 .hero-logo-wrap {
-  display: none;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+
+  background: none !important;
 }
 
-.hero-logo-wrap {
-  visibility: hidden;
-  height: 0;
+.hero-logo-wrap img,
+.hero-logo {
+  display: none; 
 }
