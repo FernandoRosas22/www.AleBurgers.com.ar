@@ -1,14 +1,12 @@
 .hero-logo {
   width: 140px;
   height: 140px;
-  margin: 0 auto;
-  background-image: url('logo.png.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: contain;
   background-color: white;
   border-radius: 50%;
   padding: 15px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ======= VIDEOS ======= */
